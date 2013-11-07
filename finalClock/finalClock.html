@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>SimpleClock</title>
+</head>
+<body>
+  
+  
+  
+  <script src="finalClock.js"></script>
+  
+<svg 
+width="270px" height="270px" viewBox="0 0 270 270" 
+onload="setClock()">
+  <g transform="translate(150,150)">
+
+  <!-- tick -->
+  <g>
+    <circle r="108"  fill="none" stroke-width="8" stroke="green" />
+    <circle r="97" fill="none" stroke-width="11" stroke="black" 
+       stroke-dasharray="4,46.789082" transform="rotate(-1.5)" />
+    <circle r="100" fill="none" stroke-width="5" stroke="black"
+       stroke-dasharray="2,8.471976" transform="rotate(-.873)" />
+  </g>
+
+  <!-- hands -->
+  <g id="hands" transform="rotate(180)">
+   <g id="hour">
+    <line stroke-width="5" y2="75" stroke-linecap="round" stroke="black" opacity=".5" />
+      <animateTransform attributeName="transform" type="rotate"
+         repeatCount="indefinite" dur="12h" by="360" />
+    <circle r="7" />
+   </g>
+   <g id="minute">
+    <line stroke-width="4" y2="93" stroke-linecap="round" stroke="purple" opacity=".9" />
+      <animateTransform attributeName="transform" type="rotate"
+         repeatCount="indefinite" dur="60min" by="360" />
+    <circle r="6" fill="red"/>
+   </g>
+   <g id="second">
+    <line stroke-width="2" y1="-20" y2="102" stroke-linecap="round" stroke="green" />
+    <animateTransform attributeName="transform" type="rotate"
+        repeatCount="indefinite" dur="60s" by="360" />
+    <circle r="4" fill="blue"/>
+   </g>
+  </g>
+
+</g>
+</svg>
+        
+</body>
+</html>
